@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SEPHORA MX - Tienda Oficial de Cosméticos</title>
+</head>
+<body bgcolor="#FFF8F0" text="#333333" link="#B85D75" vlink="#8B4255" alink="#FF0000">
+
+    <!-- BARRA NAVEGACIÓN -->
+    <table width="100%" border="0" cellpadding="10" bgcolor="#000000">
+        <tr>
+            <td align="left">
+                <h1><font color="#FFFFFF" face="Arial">SEPHORA MX</font></h1>
+                <small><font color="#E8C5B0" face="Arial">Cosméticos y Belleza de Lujo ($ MXN)</font></small>
+            </td>
+            <td align="right">
+                <font face="Arial" color="#FFFFFF">
+                    <a href="index.html"><font color="#E8C5B0"><b>Inicio</b></font></a> | 
+                    <a href="skincare.php"><font color="#E8C5B0">Skincare</font></a> | 
+                    <a href="maquillaje.php"><font color="#E8C5B0">Maquillaje</font></a> | 
+                    <a href="labiales.php"><font color="#E8C5B0">Labiales</font></a> | 
+                    <a href="fragancias.php"><font color="#E8C5B0">Perfumes</font></a> | 
+                    <a href="carrito.php"><font color="#E8C5B0">Mi Carrito</font></a> | 
+                    <a href="login.html"><font color="#E8C5B0">Mi Cuenta</font></a>
+                </font>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <!-- MENSAJE DINÁMICO -->
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const msg = params.get('msg');
+        const type = params.get('type');
+        if (msg) {
+            const colorFondo = (type === 'exito') ? '#D4EDDA' : '#F8D7DA';
+            const colorTexto = (type === 'exito') ? '#155724' : '#721C24';
+            document.write(`
+                <table width="100%" border="1" cellpadding="15" bgcolor="${colorFondo}">
+                    <tr><td align="center"><b><font face="Arial" color="${colorTexto}" size="4">${msg}</font></b></td></tr>
+                </table><br>
+            `);
+        }
+    </script>
+
+    <!-- INICIO INFORMATIVO -->
+    <table width="100%" border="0" cellpadding="20" bgcolor="#F4E3D7">
+        <tr>
+            <td align="center">
+                <h2><font face="Arial" color="#000000">¡Bienvenid@ a SEPHORA MX!</font></h2>
+                <p><font face="Arial" size="3">Explora nuestra plataforma oficial de productos de belleza de lujo. Descubre lo mejor en cuidado de la piel, cosméticos, labiales y fragancias de marcas icónicas como <b>Rare Beauty, Fenty Beauty, Charlotte Tilbury, Dior y Sol de Janeiro</b>.</font></p>
+                <p><b><font face="Arial" color="#B85D75">Envío Gratis a todo México en compras mayores a $1,200.00 MXN</font></b></p>
+            </td>
+        </tr>
+    </table>
+
+    <br><hr><br>
+
+    <!-- SECCIONES PRINCIPALES -->
+    <h2 align="center"><font face="Arial" color="#000000">Explora Nuestras Secciones</font></h2>
+    
+    <table width="100%" border="1" cellpadding="15" cellspacing="10" bordercolor="#E8C5B0">
+        <tr>
+            <td width="25%" align="center" bgcolor="#FFFFFF" valign="top">
+                <picture>
+                    <source srcset="img/skincare1.jpeg" type="image/png">
+                    <source srcset="img/skincare1.jpeg" type="image/jpeg">
+                    <img src="img/skincare1.jpeg" width="120" height="120" alt="Skincare">
+                </picture><br><br>
+                <h3><font face="Arial">Skincare</font></h3>
+                <p><font face="Arial" size="2">Sérums, cremas hidratantes y limpiadores faciales.</font></p>
+                <form action="skincare.php" method="GET"><input type="submit" value="Ver Productos"></form>
+            </td>
+            <td width="25%" align="center" bgcolor="#FFFFFF" valign="top">
+                <picture>
+                    <source srcset="img/maquillaje2.jpeg" type="image/png">
+                    <source srcset="img/maquillaje2.jpeg" type="image/jpeg">
+                    <img src="img/maquillaje2.jpeg" width="120" height="120" alt="Maquillaje">
+                </picture><br><br>
+                <h3><font face="Arial">Maquillaje</font></h3>
+                <p><font face="Arial" size="2">Bases, rubores, polvos y paletas de sombras.</font></p>
+                <form action="maquillaje.php" method="GET"><input type="submit" value="Ver Productos"></form>
+            </td>
+            <td width="25%" align="center" bgcolor="#FFFFFF" valign="top">
+                <picture>
+                    <source srcset="img/labial2.jpg" type="image/png">
+                    <source srcset="img/labial2.jpeg" type="image/jpeg">
+                    <img src="img/labial1.jpg" width="120" height="120" alt="Labiales">
+                </picture><br><br>
+                <h3><font face="Arial">Labiales</font></h3>
+                <p><font face="Arial" size="2">Glosses, bálsamos y labiales mate de alta duración.</font></p>
+                <form action="labiales.php" method="GET"><input type="submit" value="Ver Productos"></form>
+            </td>
+            <td width="25%" align="center" bgcolor="#FFFFFF" valign="top">
+                <picture>
+                    <source srcset="img/perfume2.jpg" type="image/png">
+                    <source srcset="img/perfume2.jpeg" type="image/jpeg">
+                    <img src="img/perfume2.jpg" width="120" height="120" alt="Perfumes">
+                </picture><br><br>
+                <h3><font face="Arial">Perfumes</font></h3>
+                <p><font face="Arial" size="2">Fragancias de lujo, eau de parfum y brumas corporales.</font></p>
+                <form action="fragancias.php" method="GET"><input type="submit" value="Ver Productos"></form>
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+    <table width="100%" border="0" cellpadding="10" bgcolor="#000000">
+        <tr><td align="center"><font color="#E8C5B0" face="Arial" size="2">&copy; RIVERA CHAVEZ MARIA FERNANDA 5°J</font></td></tr>
+    </table>
+</body>
+</html>

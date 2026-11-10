@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Cuenta - SEPHORA MX</title>
+</head>
+<body bgcolor="#FFF8F0" text="#333333" link="#B85D75" vlink="#8B4255" alink="#FF0000">
+
+    <table width="100%" border="0" cellpadding="10" bgcolor="#000000">
+        <tr>
+            <td align="left"><h1><font color="#FFFFFF" face="Arial">SEPHORA MX</font></h1></td>
+            <td align="right">
+                <font face="Arial" color="#FFFFFF">
+                    <a href="index.html"><font color="#E8C5B0">Inicio</font></a> | 
+                    <a href="skincare.php"><font color="#E8C5B0">Skincare</font></a> | 
+                    <a href="maquillaje.php"><font color="#E8C5B0">Maquillaje</font></a> | 
+                    <a href="labiales.php"><font color="#E8C5B0">Labiales</font></a> | 
+                    <a href="fragancias.php"><font color="#E8C5B0">Perfumes</font></a> | 
+                    <a href="carrito.php"><font color="#E8C5B0">Mi Carrito</font></a> | 
+                    <a href="login.html"><font color="#E8C5B0"><b>Mi Cuenta</b></font></a>
+                </font>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const msg = params.get('msg');
+        const type = params.get('type');
+        if (msg) {
+            const colorFondo = (type === 'exito') ? '#D4EDDA' : '#F8D7DA';
+            const colorTexto = (type === 'exito') ? '#155724' : '#721C24';
+            document.write(`
+                <table width="100%" border="1" cellpadding="15" bgcolor="${colorFondo}">
+                    <tr><td align="center"><b><font face="Arial" color="${colorTexto}" size="4">${msg}</font></b></td></tr>
+                </table><br>
+            `);
+        }
+    </script>
+
+    <h2 align="center"><font face="Arial" color="#000000">Registro e Inicio de Sesión</font></h2>
+
+    <table width="100%" border="0" cellpadding="10" cellspacing="10">
+        <tr>
+            <td width="50%" valign="top" bgcolor="#FFFFFF">
+                <table width="100%" border="1" cellpadding="10" cellspacing="0" bordercolor="#E8C5B0">
+                    <tr bgcolor="#000000"><td align="center"><h3><font color="#FFFFFF" face="Arial">Registro en SEPHORA MX</font></h3></td></tr>
+                    <tr>
+                        <td>
+                            <form action="auth.php?action=registro" method="POST">
+                                <font face="Arial">
+                                    <label><b>Nombre Completo:</b></label><br><input type="text" name="nombre" required><br><br>
+                                    <label><b>Correo Electrónico:</b></label><br><input type="email" name="email" required><br><br>
+                                    <label><b>Contraseña:</b></label><br><input type="password" name="password" required><br><br>
+                                    <label><b>Teléfono:</b></label><br><input type="tel" name="telefono"><br><br>
+                                    <label><b>Dirección:</b></label><br><textarea name="direccion" rows="3" cols="25"></textarea><br><br>
+                                    <input type="submit" value="Registrarse">
+                                </font>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+
+            <td width="50%" valign="top" bgcolor="#FFFFFF">
+                <table width="100%" border="1" cellpadding="10" cellspacing="0" bordercolor="#E8C5B0">
+                    <tr bgcolor="#000000"><td align="center"><h3><font color="#FFFFFF" face="Arial">Iniciar Sesión</font></h3></td></tr>
+                    <tr>
+                        <td>
+                            <form action="auth.php?action=login" method="POST">
+                                <font face="Arial">
+                                    <label><b>Correo Electrónico:</b></label><br><input type="email" name="email" required><br><br>
+                                    <label><b>Contraseña:</b></label><br><input type="password" name="password" required><br><br>
+                                    <input type="submit" value="Ingresar al Sistema">
+                                </font>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+    <table width="100%" border="0" cellpadding="10" bgcolor="#000000">
+        <tr><td align="center"><font color="#E8C5B0" face="Arial" size="2">&copy; SEPHORA MX</font></td></tr>
+    </table>
+</body>
+</html>
